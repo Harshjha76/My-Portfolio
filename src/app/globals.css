@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Natural Forest & Warm Ivory Theme (Default) */
+  --bg-main: #F5F1E8;             /* Background: Warm Ivory */
+  --bg-secondary: #E6E0D2;        /* Secondary background */
+  --bg-card: #FFFFFF;             /* Card background: Clean White */
+  --bg-card-hover: #FAF7F2;       /* Card hover */
+  --text-main: #263B32;           /* Primary color: Deep Forest Green */
+  --text-muted: #73786F;          /* Secondary text */
+  --border-color: #D9D2C5;        /* Soft natural border */
+  --border-subtle: #E6E0D2;       /* Subtle secondary border */
+
+  --primary-color: #263B32;       /* Primary color: Deep Forest */
+  --accent-green: #87947A;        /* Accent green: Sage */
+  --secondary-text: #73786F;      /* Secondary text */
+  --highlight-color: #B18A5A;     /* Highlight color: Subtle Bronze */
+
+  --accent-color: #263B32;
+  --accent-hover: #1E2F28;
+  --accent-secondary: #B18A5A;
+  --accent-glow: rgba(135, 148, 122, 0.18);
+  --accent-muted: rgba(135, 148, 122, 0.12);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --border-radius: 0.85rem;
+}
+
+[data-theme="dark"], .dark {
+  /* Coordinated Dark Mode (Deep Forest Night) */
+  --bg-main: #18221D;             /* Deepest Natural Forest */
+  --bg-secondary: #222E27;        /* Forest secondary */
+  --bg-card: #263B32;             /* Deep Forest Green card */
+  --bg-card-hover: #2E453B;
+  --text-main: #F5F1E8;           /* Warm Ivory text */
+  --text-muted: #A3ACA5;          /* Muted Sage secondary text */
+  --border-color: #384F44;        /* Forest border */
+  --border-subtle: #2C3F36;
+
+  --primary-color: #F5F1E8;
+  --accent-green: #87947A;
+  --secondary-text: #A3ACA5;
+  --highlight-color: #B18A5A;
+
+  --accent-color: #87947A;
+  --accent-hover: #97A48A;
+  --accent-secondary: #B18A5A;
+  --accent-glow: rgba(135, 148, 122, 0.25);
+  --accent-muted: rgba(135, 148, 122, 0.15);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  selection-background-color: var(--accent-secondary);
+  selection-color: #FFFFFF;
+}
+
+::selection {
+  background-color: var(--accent-secondary);
+  color: #FFFFFF;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Natural Card & Surface Styles */
+.portfolio-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.25s ease, 
+              box-shadow 0.25s ease,
+              background-color 0.25s ease;
+}
+
+.portfolio-card:hover {
+  border-color: rgba(177, 138, 90, 0.4);
+}
+
+/* Subtle 3D and Perspective */
+.perspective-container {
+  perspective: 1000px;
+}
+
+.tilt-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.tilt-card:hover {
+  transform: translateY(-4px) rotateX(1.5deg) rotateY(-1.5deg);
+  box-shadow: 0 16px 32px -8px rgba(24, 31, 28, 0.4), 0 0 16px rgba(135, 148, 122, 0.15);
+}
+
+/* Realistic Soft Shadows */
+.natural-shadow-sm {
+  box-shadow: 0 2px 8px -2px rgba(24, 31, 28, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.1);
+}
+
+.natural-shadow-md {
+  box-shadow: 0 8px 20px -4px rgba(24, 31, 28, 0.3), 0 2px 6px -1px rgba(0, 0, 0, 0.08);
+}
+
+.natural-shadow-lg {
+  box-shadow: 0 16px 36px -6px rgba(24, 31, 28, 0.38), 0 4px 12px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle Natural Glow Blob */
+.ambient-natural {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.14;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .tilt-card:hover {
+    transform: none !important;
+  }
+}

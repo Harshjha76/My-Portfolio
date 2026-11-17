@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141822" />
+      <stop offset="50%" stop-color="#0E1218" />
+      <stop offset="100%" stop-color="#090B0E" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.8" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" rx="32" fill="url(#bgGrad)" />
+  <circle cx="200" cy="180" r="160" fill="url(#glow)" />
+
+  <!-- Outer Ring with Tech Accents -->
+  <circle cx="200" cy="180" r="130" fill="none" stroke="url(#ringGrad)" stroke-width="2" stroke-dasharray="6 4" />
+  <circle cx="200" cy="180" r="118" fill="#161B26" stroke="#252D3D" stroke-width="2" />
+
+  <!-- Stylized Portrait Silhouette / Tech Avatar -->
+  <!-- Head & Torso Silhouette -->
+  <g fill="none" stroke="url(#cyanGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Stylized Head Silhouette -->
+    <path d="M 160 160 C 160 135, 175 115, 200 115 C 225 115, 240 135, 240 160 C 240 185, 225 200, 200 200 C 175 200, 160 185, 160 160 Z" fill="#1C2333" stroke="url(#cyanGrad)" stroke-width="3" />
+    <!-- AI / Tech Nodes -->
+    <circle cx="200" cy="155" r="4" fill="#38BDF8" stroke="none" />
+    <path d="M 185 155 L 215 155" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2 2" />
+    <path d="M 200 140 L 200 170" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2 2" />
+    
+    <!-- Shoulders Silhouette -->
+    <path d="M 130 255 C 130 215, 165 210, 200 210 C 235 210, 270 215, 270 255" fill="#182030" stroke="url(#cyanGrad)" stroke-width="3" />
+  </g>
+
+  <!-- Monogram Initials HJ at Bottom -->
+  <g transform="translate(200, 335)" text-anchor="middle">
+    <rect x="-70" y="-22" width="140" height="34" rx="8" fill="#131722" stroke="#252F42" stroke-width="1.5" />
+    <text y="2" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#E2E8F0" letter-spacing="3">HARSH JHA</text>
+  </g>
+
+  <!-- Orbiting dots -->
+  <circle cx="310" cy="130" r="4" fill="#06B6D4" />
+  <circle cx="90" cy="220" r="3" fill="#38BDF8" opacity="0.7" />
+  <circle cx="290" cy="240" r="3.5" fill="#0EA5E9" opacity="0.8" />
+</svg>
